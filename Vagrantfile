@@ -115,4 +115,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # chef-validator, unless you changed the configuration.
   #
   #   chef.validation_client_name = "ORGNAME-validator"
+$commands = <<-EOM
+    sudo cp /vagrant/sources.list /etc/apt/ 
+    sudo apt-get update
+EOM
+  config.vm.provision :shell, inline: $commands
 end
