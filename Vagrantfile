@@ -118,6 +118,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 $commands = <<-EOM
     sudo cp /vagrant/sources.list /etc/apt/ 
     sudo apt-get update
+    sudo apt-get install -y apache2 php5
 EOM
   config.vm.provision :shell, inline: $commands
 end
